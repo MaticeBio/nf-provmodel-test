@@ -17,6 +17,14 @@ process P_STD {
     """
 }
 
+process P_ONDEMAND {
+    script:
+    """
+    echo P_ONDEMAND
+    sleep 45
+    """
+}
+
 process P_PREEMPT {
     script:
     """
@@ -36,6 +44,7 @@ process P_DEFAULT {
 workflow {
     P_SPOT()
     P_STD()
+    P_ONDEMAND()
     P_PREEMPT()
     P_DEFAULT()
 }
