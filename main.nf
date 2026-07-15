@@ -41,10 +41,19 @@ process P_DEFAULT {
     """
 }
 
+process P_TEMPLATE {
+    script:
+    """
+    echo P_TEMPLATE
+    sleep 45
+    """
+}
+
 workflow {
     P_SPOT()
     P_STD()
     P_ONDEMAND()
     P_PREEMPT()
     P_DEFAULT()
+    P_TEMPLATE()
 }
